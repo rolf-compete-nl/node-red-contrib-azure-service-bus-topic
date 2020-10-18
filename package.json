@@ -1,0 +1,38 @@
+{
+  "name": "node-red-contrib-azure-service-bus-topic",
+  "version": "1.0.8",
+  "description": "Sends and receives topic messages from Azure Service Bus topic",
+  "main": "post-message.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node-red",
+    "azure",
+    "service",
+    "bus",
+    "topic"
+  ],
+  "node-red": {
+    "nodes": {
+      "post-message": "post-message.js",
+      "receive-message": "receive-message.js"
+    }
+  },
+  "author": "Ravi Reddy",
+  "license": "MIT",
+  "dependencies": {
+    "azure-sb": "^0.10.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/neosource/node-red-contrib-azure-service-bus-topic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/neosource/node-red-contrib-azure-service-bus-topic/issues"
+  },
+  "homepage": "https://github.com/neosource/node-red-contrib-azure-service-bus-topic#readme",
+  "devDependencies": {
+    "node-red-node-test-helper": "^0.2.5"
+  }
+}

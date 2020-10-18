@@ -1,0 +1,36 @@
+<script type="text/javascript">
+    RED.nodes.registerType('post-message-topic',{
+        category: 'Azure',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            topic: {value:""},
+            connectionString: {value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "envelop.png",
+        label: function() {
+            return this.name||"post-message-topic";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="post-message-topic">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-topic"><i class="icon-tag"></i> Topic</label>
+        <input type="text" id="node-input-topic" placeholder="Topic">
+    </div>
+    <div class="form-row">
+        <label for="node-input-connectionString"><i class="icon-tag"></i> ConnectionString</label>
+        <input type="text" id="node-input-connectionString" placeholder="connectionString">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="post-message">
+    <p>A simple node that sends messages to Azure Topic</p>
+</script>
