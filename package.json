@@ -4,7 +4,7 @@
   "description": "Sends and receives topic messages from Azure Service Bus topic",
   "main": "post-message.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha \"test/**/*_spec.js\""
   },
   "keywords": [
     "node-red",
@@ -15,8 +15,8 @@
   ],
   "node-red": {
     "nodes": {
-      "post-message": "post-message.js",
-      "receive-message": "receive-message.js"
+      "post-message-topic": "post-message.js",
+      "receive-message-topic": "receive-message.js"
     }
   },
   "author": "Ravi Reddy",
