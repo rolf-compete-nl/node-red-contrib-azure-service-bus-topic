@@ -1,4 +1,5 @@
 var azure = require("azure-sb");
+const nodeRedNodeTestHelper = require("node-red-node-test-helper");
 
 module.exports = function(RED) {
     function ReceiveMessage(config) {
@@ -26,7 +27,8 @@ module.exports = function(RED) {
                 node.log("Exiting... " + d);
                 return;
             }
-            serviceBusService.receiveQueueMessage(config.queue, {timeoutIntervalInS: 180}, function(error, receivedMessage){
+            
+            serviceBusService.receiveSubscriptionMessage(config.topic, config.subscription, {timeoutIntervalInS: 180}, function(error, receivedMessage){
                 if(error){
                     if(error == "No messages to receive") {
                         node.status({ fill: "green", shape: "dot", text: "connected" });
@@ -38,8 +40,7 @@ module.exports = function(RED) {
                         setTimeout(checkForMessage, 60000);
                     }
                 } else {
-                    var msg = receivedMessage.body;
-                    
+                    var msg = receivedMessage;
                     var enqueueTime = new Date(receivedMessage.brokerProperties.EnqueuedTimeUtc);
                     receivedMessage.brokerProperties.EnqueuedTimeUtc = enqueueTime;
 
@@ -48,10 +49,8 @@ module.exports = function(RED) {
                     } catch(err) {}
                     
                     node.status({ fill: "blue", shape: "ring", text: "got a message" });
-                    node.send({
-                        payload: msg,
-                        brokerProperties: receivedMessage.brokerProperties
-                    });
+                    
+                    node.send(msg);
 
                     setTimeout(()=>{ node.status({ fill: "green", shape: "dot", text: "connected" }); }, 2000);
 

@@ -33,6 +33,7 @@
   },
   "homepage": "https://github.com/neosource/node-red-contrib-azure-service-bus-topic#readme",
   "devDependencies": {
+    "mocha": "8.2.0",
     "node-red-node-test-helper": "^0.2.5"
   }
 }

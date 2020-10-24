@@ -4,7 +4,6 @@ module.exports = function(RED) {
     function SendMessage(config) {
         RED.nodes.createNode(this,config);
         var node = this;
-
         var serviceBusService = azure.createServiceBusService(config.connectionString);
 
         node.on('input', function(msg) {
