@@ -23,3 +23,4 @@ module.exports = function(RED) {
     }
     RED.nodes.registerType("post-message-topic",SendMessage);
 }
+
