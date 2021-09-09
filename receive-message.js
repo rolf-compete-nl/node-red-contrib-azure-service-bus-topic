@@ -1,5 +1,4 @@
 var azure = require("azure-sb");
-const nodeRedNodeTestHelper = require("node-red-node-test-helper");
 
 module.exports = function(RED) {
     function ReceiveMessage(config) {
