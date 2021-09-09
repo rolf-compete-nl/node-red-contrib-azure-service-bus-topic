@@ -22,7 +22,7 @@
   "author": "Ravi Reddy",
   "license": "MIT",
   "dependencies": {
-    "azure-sb": "^0.10.6"
+    "azure-sb": "^0.11.2"
   },
   "repository": {
     "type": "git",
